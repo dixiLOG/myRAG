@@ -1,0 +1,62 @@
+name: sample-benchmark
+cases:
+  - case_id: q1
+    question: 外儒内法这篇文章最后用哪八个字总结方法论？
+    content_type: essay
+    query_type: 观点定位
+    expected_doc_ids: [blog_essay]
+    expected_phrases: [外儒内法, 知行合一]
+  - case_id: q2
+    question: 飞书文档下载为 Markdown 的配置命令是什么？
+    content_type: tutorial
+    query_type: 事实查找
+    expected_doc_ids: [feishu_github_tutorial]
+    expected_phrases: [feishu2md config]
+  - case_id: q3
+    question: 批量下载飞书文件夹的命令是什么？
+    content_type: tutorial
+    query_type: 步骤总结
+    expected_doc_ids: [feishu_github_tutorial]
+    expected_phrases: [--batch]
+  - case_id: q4
+    question: Linux shell 学习里提到的九大分类包括哪些方向？
+    content_type: note
+    query_type: 步骤总结
+    expected_doc_ids: [linux_shell_note]
+    expected_phrases: [文件目录管理, 网络管理]
+  - case_id: q5
+    question: 查看与帮助这一节提到了哪些命令？
+    content_type: note
+    query_type: 事实查找
+    expected_doc_ids: [linux_shell_note]
+    expected_phrases: [whatis, man]
+  - case_id: q6
+    question: Material 设计笔记里说设计系统不能只看什么？
+    content_type: longform
+    query_type: 观点定位
+    expected_doc_ids: [material_longform]
+    expected_phrases: [组件]
+  - case_id: q7
+    question: MD3 的重要变化是什么？
+    content_type: longform
+    query_type: 事实查找
+    expected_doc_ids: [material_longform]
+    expected_phrases: [动态色彩]
+  - case_id: q8
+    question: 《远大前程》阅读报告主要围绕什么主题展开？
+    content_type: book_note
+    query_type: 观点定位
+    expected_doc_ids: [great_expectations_book_note]
+    expected_phrases: [成长]
+  - case_id: q9
+    question: 哪篇文章提到了 GitHub Pages？
+    content_type: tutorial
+    query_type: 跨文档关联
+    expected_doc_ids: [feishu_github_tutorial]
+    expected_phrases: [GitHub Pages]
+  - case_id: q10
+    question: 哪篇文章同时谈到了期望、定位、同理和行动？
+    content_type: essay
+    query_type: 跨文档关联
+    expected_doc_ids: [blog_essay]
+    expected_phrases: [期望, 定位]

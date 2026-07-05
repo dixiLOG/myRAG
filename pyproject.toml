@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "myrag"
+version = "0.1.0"
+description = "Extensible control plane + experimental RAG plane for a personal knowledge gallery agent."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+  { name = "Codex + User" }
+]
+dependencies = [
+  "fastapi>=0.116,<0.117",
+  "langgraph>=1.0,<1.1",
+  "llama-index>=0.14,<0.15",
+  "llama-index-vector-stores-qdrant>=0.9,<0.10",
+  "orjson>=3.11,<4",
+  "pydantic>=2.11,<3",
+  "pydantic-settings>=2.10,<3",
+  "pyyaml>=6.0.2,<7",
+  "qdrant-client>=1.16,<1.17",
+  "structlog>=25.4,<26",
+  "typer>=0.16,<0.17",
+  "uvicorn>=0.35,<0.36",
+]
+
+[project.optional-dependencies]
+dev = [
+  "httpx>=0.28,<0.29",
+  "pytest>=8.4,<9",
+  "pytest-asyncio>=1.1,<2",
+  "pytest-cov>=6.2,<7",
+]
+
+[project.scripts]
+myrag = "myrag.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/myrag"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
